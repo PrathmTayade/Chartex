@@ -25,6 +25,7 @@ import {
   PieChart,
   DonutLargeSharp,
   LineAxis,
+  BarChart,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -50,6 +51,10 @@ const navItems = [
   {
     text: "Year",
     icon: <LineAxis />,
+  },
+  {
+    text: "Regions",
+    icon: <BarChart />,
   },
   
   

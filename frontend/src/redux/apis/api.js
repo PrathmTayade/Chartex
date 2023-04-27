@@ -13,12 +13,18 @@ export const api = createApi({
       query: () => "data/sectors",
       providesTags: ["Sectors"],
     }),
+    getRegions: build.query({
+      query: () => "data/regions",
+    }),
     getInsights: build.query({
       query: (params) => `/insights?${params}`,
-
     }),
   }),
 });
 
-export const { useGetTopicsQuery, useGetSectorsQuery, useGetInsightsQuery } =
-  api;
+export const {
+  useGetTopicsQuery,
+  useGetSectorsQuery,
+  useGetInsightsQuery,
+  useGetRegionsQuery,
+} = api;

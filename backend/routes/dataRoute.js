@@ -60,6 +60,6 @@ router.get("/sectors", async (req, res) => {
   }
 });
 
-router.get("/region", getRegion);
+router.get("/regions", getRegion);
 
 export { router as dataRoute };

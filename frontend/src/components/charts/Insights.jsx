@@ -20,6 +20,7 @@ const Insights = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
+      {/* Header */}
       <Header title="Insights" subtitle="Insight of all the Data" />
       <Box
         height="80vh"
@@ -49,6 +50,7 @@ const Insights = () => {
         }}
       >
         {/* //TODO maybe ad custom filtering */}
+
         <DataGrid
           loading={isLoading}
           getRowId={(row) => row._id}
