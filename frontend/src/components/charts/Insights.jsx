@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import Header from "../ui/Header";
@@ -6,12 +5,7 @@ import { useGetInsightsQuery } from "../../redux/apis/api";
 
 const Insights = () => {
   const theme = useTheme();
-
-  // values to be sent to the backend
-  const [page, setPage] = useState(0);
-  const [pageSize, setPageSize] = useState(20);
-
-  const { data, isLoading } = useGetInsightsQuery();
+  const { data = [], isLoading } = useGetInsightsQuery();
 
   const columns = [
     { field: "_id", headerName: "ID", flex: 1 },
@@ -54,10 +48,11 @@ const Insights = () => {
           },
         }}
       >
+        {/* //TODO maybe ad custom filtering */}
         <DataGrid
-          loading={isLoading || !data}
+          loading={isLoading}
           getRowId={(row) => row._id}
-          rows={data || []}
+          rows={data}
           columns={columns}
           pagination
           components={{ Toolbar: GridToolbar }}

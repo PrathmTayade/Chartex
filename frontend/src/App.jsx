@@ -4,6 +4,8 @@ import Dashboard from "./components/ui/Dashboard";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import Providers from "./components/Providers";
+import Sectors from "./components/charts/Sectors";
+import Topics from "./components/charts/Topics";
 
 function App() {
   return (
@@ -13,6 +15,9 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Navigate to={"/dashboard"} replace />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/sectors" element={<Sectors />} />
+            <Route path="/topics" element={<Topics />} />
+            <Route path="/likelyhood" element={<Topics />} />
           </Route>
         </Routes>
       </Providers>
