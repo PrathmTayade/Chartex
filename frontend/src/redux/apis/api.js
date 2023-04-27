@@ -13,11 +13,12 @@ export const api = createApi({
       query: () => "data/sectors",
       providesTags: ["Sectors"],
     }),
-    getInsighs: build.query({
-      query: (params) => `/insights?${new URLSearchParams(params).toString()}`,
-      // or   query: (params) => `/api/insights?${params}`,
+    getInsights: build.query({
+      query: (params) => `/insights?${params}`,
+
     }),
   }),
 });
 
-export const { useGetTopicsQuery , useGetSectorsQuery , useGetInsighsQuery } = api;
+export const { useGetTopicsQuery, useGetSectorsQuery, useGetInsightsQuery } =
+  api;
