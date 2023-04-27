@@ -8,6 +8,7 @@ import { connectDB } from "./config/db.js";
 import { dataRoute } from "./routes/dataRoute.js";
 import importData from "./data/importData.js";
 import { getTopics } from "./controllers/getTopics.js";
+import { insightRoute } from "./routes/insightRoute.js";
 // CONFIG
 
 dotenv.config();
@@ -25,6 +26,7 @@ app.use(cors());
 
 // ROUTES
 app.use("/data", dataRoute);
+app.use("/insights", insightRoute);
 
 // MongoDB
 

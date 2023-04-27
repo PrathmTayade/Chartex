@@ -1,5 +1,6 @@
 import express from "express";
 import Data from "../models/dataModel.js";
+import getInsights from "../controllers/getInsights.js";
 
 const router = express.Router();
 
@@ -55,6 +56,19 @@ router.get("/sectors", async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server error" });
+  }
+});
+
+//Insights
+router.get("/insights", async (req, res) => {
+  try {
+    console.log(req.params);
+    const insights = await getInsights();
+
+    res.json(insights);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error getting data");
   }
 });
 

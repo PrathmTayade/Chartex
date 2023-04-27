@@ -1,13 +1,15 @@
 import React from "react";
 import Topics from "../charts/Topics";
-import Sectors from "../charts/Sectors";
+import Insights from "./Insights";
+import InsightsGrid from "./Insights2";
 
 const Dashboard = () => {
   return (
     <div>
       <div>Dashboard</div>
       {/* <Topics /> */}
-      <Sectors/>
+     {/* <Insights/> */}
+     <InsightsGrid/>
     </div>
   );
 };
