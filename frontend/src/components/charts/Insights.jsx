@@ -8,7 +8,7 @@ const Insights = () => {
   const { data = [], isLoading } = useGetInsightsQuery();
 
   const columns = [
-    { field: "_id", headerName: "ID", flex: 1 },
+    { field: "_id", headerName: "ID", width: "50" },
     { field: "sector", headerName: "Sector", flex: 1 },
     { field: "topic", headerName: "Topic", flex: 1 },
     { field: "pestle", headerName: "Pest", flex: 1 },
@@ -24,10 +24,9 @@ const Insights = () => {
       <Header title="Insights" subtitle="Insight of all the Data" />
       <Box
         height="80vh"
+        paddingY={"1rem"}
         sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
+          "& .MuiDataGrid-root": {},
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
           },
