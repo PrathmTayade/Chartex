@@ -26,6 +26,7 @@ import {
   DonutLargeSharp,
   LineAxis,
   BarChart,
+  LineStyle,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -56,8 +57,10 @@ const navItems = [
     text: "Regions",
     icon: <BarChart />,
   },
-  
-  
+  {
+    text: "Intensity",
+    icon: <LineStyle />,
+  },
 ];
 
 const Sidebar = ({

@@ -7,6 +7,7 @@ import Providers from "./components/Providers";
 import Sectors from "./components/charts/Sectors";
 import Topics from "./components/charts/Topics";
 import Regions from "./components/charts/Regions";
+import IntensityLineChart from "./components/charts/Intensity";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/topics" element={<Topics />} />
             <Route path="/likelyhood" element={<Topics />} />
             <Route path="/regions" element={<Regions />} />
+            <Route path="/intensity" element={<IntensityLineChart />} />
           </Route>
         </Routes>
       </Providers>

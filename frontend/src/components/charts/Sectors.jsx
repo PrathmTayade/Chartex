@@ -35,12 +35,25 @@ function Sectors() {
     ],
   };
   return (
-    <Box m="1.5rem 2.5rem">
+    <Box
+      sx={{
+        m: "1.5rem 2.5rem",
+      }}
+    >
       <Header
         title={"Sectors Chart"}
         subtitle={"Pie chart for all the sectors of the data"}
       />
-      <Pie  data={chartData} />
+      <Box>
+        <Pie
+          data={chartData}
+          options={{
+            layout: {
+              padding: 50
+            },
+          }}
+        />
+      </Box>
     </Box>
   );
 }
