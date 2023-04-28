@@ -50,16 +50,12 @@ const navItems = [
     icon: <DonutLargeSharp />,
   },
   {
-    text: "Year",
+    text: "Intensity",
     icon: <LineAxis />,
   },
   {
     text: "Regions",
     icon: <BarChart />,
-  },
-  {
-    text: "Intensity",
-    icon: <LineStyle />,
   },
 ];
 
