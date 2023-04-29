@@ -1,20 +1,15 @@
-import {
-  Chart as ChartJS,
-  Colors,
-  ArcElement,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { useGetTopicsQuery } from "../../redux/apis/api";
-import autocolors from "chartjs-plugin-autocolors";
-import { Box } from "@mui/material";
+import { useTheme } from "@mui/material";
 import Header from "../ui/Header";
+import randomColors from "randomcolor";
 
-ChartJS.register(ArcElement, Tooltip, Legend,Colors );
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 function Topics() {
   const { data, error, isLoading } = useGetTopicsQuery();
+  const theme = useTheme();
 
   if (isLoading) {
     return <div className="text-center ">Loading data from database</div>;
@@ -23,6 +18,7 @@ function Topics() {
   if (error) {
     return <div>Error getting data</div>;
   }
+  const colour = randomColors({ count: data.length });
 
   const topicsData = {
     labels: data.map((t) => t._id),
@@ -31,32 +27,32 @@ function Topics() {
       {
         label: "No.sectors:",
         data: data.map((t) => t.count),
+        backgroundColor: colour,
       },
     ],
   };
 
-  const lighten = (color, value) =>
-    ChartJS.helpers.color(color).lighten(value).rgbString();
-  const topicsOption = {
-    plugins: {
-      autocolors: {
-        mode: "data",
-      },
-    },
-  };
-
   return (
-    <Box m="1.5rem 2.5rem">
+    <>
       <Header
         title={"Topics Chart"}
         subtitle={"Doughnut chart for all the topics of the data"}
       />
       <Doughnut
-        className="w-full h-screen"
-        // options={topicsOption}
+        className="w-full "
         data={topicsData}
+        options={{
+          plugins: {
+            legend: {
+              position: "right",
+              labels: {
+                color: theme.palette.primary[100],
+              },
+            },
+          },
+        }}
       />
-    </Box>
+    </>
   );
 }
 

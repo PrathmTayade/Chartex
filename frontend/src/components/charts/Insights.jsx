@@ -9,6 +9,8 @@ const Insights = () => {
 
   const columns = [
     { field: "_id", headerName: "ID", width: "50" },
+    { field: "insight", headerName: "Insight", flex: 1 },
+    { field: "title", headerName: "Title", flex: 1 },
     { field: "sector", headerName: "Sector", flex: 1 },
     { field: "topic", headerName: "Topic", flex: 1 },
     { field: "pestle", headerName: "Pest", flex: 1 },
@@ -19,7 +21,7 @@ const Insights = () => {
   ];
 
   return (
-    <Box m="1.5rem 2.5rem">
+    <Box m="">
       {/* Header */}
       <Header title="Insights" subtitle="Insight of all the Data" />
       <Box

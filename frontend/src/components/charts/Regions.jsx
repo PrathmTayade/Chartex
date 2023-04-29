@@ -1,4 +1,3 @@
-import React from "react";
 import { useGetRegionsQuery } from "../../redux/apis/api";
 import { Box, useTheme } from "@mui/material";
 import {
@@ -23,8 +22,6 @@ ChartJS.register(
 );
 
 const Regions = () => {
-  const theme = useTheme();
-
   const { data = [], error, isLoading } = useGetRegionsQuery();
 
   // Convert the data to a format that Chart.js can use
@@ -77,13 +74,13 @@ const Regions = () => {
     return <div>Error getting data</div>;
   }
   return (
-    <Box p="1.5rem 2.5rem">
+    <>
       <Header
         title={"Regions Chart"}
         subtitle={"Bar chart for all the regions of the data"}
       />
       <Bar data={chartData} options={{}} />
-    </Box>
+    </>
   );
 };
 

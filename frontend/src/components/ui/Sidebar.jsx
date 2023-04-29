@@ -16,17 +16,11 @@ import {
   ChevronLeft,
   ChevronRightOutlined,
   HomeOutlined,
-  PointOfSaleOutlined,
-  TodayOutlined,
-  CalendarMonthOutlined,
-  AdminPanelSettingsOutlined,
-  TrendingUpOutlined,
   PieChartOutlined,
-  PieChart,
   DonutLargeSharp,
   LineAxis,
   BarChart,
-  LineStyle,
+  Insights,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -42,8 +36,12 @@ const navItems = [
     icon: null,
   },
   {
+    text: "Insights",
+    icon: <Insights />,
+  },
+  {
     text: "Sectors",
-    icon: <PieChart />,
+    icon: <PieChartOutlined />,
   },
   {
     text: "Topics",

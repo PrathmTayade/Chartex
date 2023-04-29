@@ -22,6 +22,9 @@ export const api = createApi({
     getInensity: build.query({
       query: () => "data/intensity",
     }),
+    getStats: build.query({
+      query: () => "data/stats",
+    }),
   }),
 });
 
@@ -31,4 +34,5 @@ export const {
   useGetInsightsQuery,
   useGetRegionsQuery,
   useGetInensityQuery,
+  useGetStatsQuery,
 } = api;

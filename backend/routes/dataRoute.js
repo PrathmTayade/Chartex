@@ -3,6 +3,7 @@ import Data from "../models/dataModel.js";
 import getInsights from "../controllers/getInsights.js";
 import getRegion from "../controllers/getRegion.js";
 import getIntensity from "../controllers/getIntensities.js";
+import getStats from "../controllers/getStats.js";
 
 const router = express.Router();
 
@@ -63,5 +64,6 @@ router.get("/sectors", async (req, res) => {
 
 router.get("/regions", getRegion);
 router.get("/intensity", getIntensity);
+router.get("/stats", getStats);
 
 export { router as dataRoute };

@@ -1,5 +1,3 @@
-// IntensityLineChart.js
-import { Box } from "@mui/material";
 import {
   Chart as ChartJS,
   Tooltip,
@@ -10,9 +8,9 @@ import {
   PointElement,
 } from "chart.js";
 import Header from "../ui/Header";
-import React from "react";
 import { Line } from "react-chartjs-2";
 import { useGetInensityQuery } from "../../redux/apis/api";
+import { useTheme } from "@mui/material";
 
 ChartJS.register(
   Tooltip,
@@ -22,7 +20,8 @@ ChartJS.register(
   LinearScale,
   PointElement
 );
-const IntensityLineChart = () => {
+const IntensityLineChart = ({ onDashBoard }) => {
+  const theme = useTheme();
   const { data = [], isLoading, error } = useGetInensityQuery();
   if (isLoading) return "Loading...";
   if (error) return `Error: ${error}`;
@@ -39,17 +38,24 @@ const IntensityLineChart = () => {
   const options = {
     plugins: {
       legend: true,
+      labels: {
+        color: theme.palette.primary[100],
+      },
     },
   };
 
   return (
-    <Box p="1.5rem 2.5rem">
-      <Header
-        title={"Line chart"}
-        subtitle={"Line chart for Eenrgy sector and its intesity for end_year"}
-      />
+    <>
+      {!onDashBoard && (
+        <Header
+          title={"Line chart for Energy sector"}
+          subtitle={
+            "Line chart for Energy sector and its intesity for end_year"
+          }
+        />
+      )}
       <Line data={chartData} options={options} />
-    </Box>
+    </>
   );
 };
 
