@@ -69,8 +69,6 @@ const InsightsTable = () => {
         getRowId={(row) => row._id}
         loading={isLoading}
         pagination
-        
-       
       />
     </div>
   );

@@ -1,6 +1,5 @@
 import fs from "fs";
-import  Data  from "../models/dataModel.js";
-
+import Data from "../models/dataModel.js";
 
 const data = JSON.parse(fs.readFileSync("./data/jsondata.json", "utf8"));
 

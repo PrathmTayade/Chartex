@@ -55,4 +55,4 @@ const DataSchema = new mongoose.Schema({
 });
 
 const Data = mongoose.model("data", DataSchema);
-export default Data ;
+export default Data;
